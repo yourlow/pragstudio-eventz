@@ -3,12 +3,12 @@
     <li>
       <strong><%= event.name %></strong>
       in <%= event.location%>
-      <%= number_to_currency(event.price, precision: 0) %>
+      <%= price(event) %>
       <p>
-        <%= event.description %>
+        <%= truncate(event.description, length: 35, seperator: ' ') %>
       </p>
       <p>
-        <%= event.starts_at %>
+        <%= pretty_date(event) %>
       </p>
     </li>
   <% end %>
